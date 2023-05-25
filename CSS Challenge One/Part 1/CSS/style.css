@@ -1,0 +1,70 @@
+/*background colour outside of the margins of the wrapper*/
+body{
+    background-color: rgba(211, 211, 211, 0.7)
+}
+
+/*styling the wrapper class*/
+.wrapper{
+    background-color: #ECECEC;
+    margin:10px;
+    padding:10px;
+}
+
+/*turning the section into a flex container*/
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section img{
+    width:30%;
+    height: auto;
+}
+
+p{
+    padding: 15px;
+}
+
+/*all odd list items will be bolded with square bullet points*/
+li:nth-child(odd){
+    font-weight: bold;
+    list-style-type: square;
+}
+
+/*flex container containing the image and figcaption*/
+figure{
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+}
+
+figure img{
+    width: 25%;
+    height: auto;
+}
+
+figure figcaption{
+    font-size: 8px;
+}
+
+/*all font on page turned dark red*/
+*{
+    color: darkred;
+}
+
+/*paragraph elements turned back to default black. This code takes priority*/
+p{
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Challenge Two/Lab Two</title>
+    <!--link to Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;300;400;600&display=swap" rel="stylesheet">
+    <link href="./CSS/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1> COMP1054 Winter 2023 Playlist - Section 02 </h1>
+            <h2> CSS Challenge #1 - Part Two </h2>
+            <nav>
+                <a href="#about"> About</a>
+                <a href="#playlist"> The Playlist</a>
+                <a href="#features"> Genres </a>
+                <a href="#features"> Top Artists </a>
+                <a href="#features"> Characteristics</a>
+            </nav>
+        </header>
+        <main>
+            <section id="about">
+                <div class="flex">
+                    <div>
+                        <img src="https://mosaic.scdn.co/640/ab67616d0000b2732299e446124bdbab6e1dbc1cab67616d0000b2737004ed5aa98c98fa50026fc5ab67616d0000b273d567bc615d8d891d112c8a35ab67616d0000b273f1666492c429465c1ec2305e"
+                            alt="cover image for playlist">
+                    </div>
+                    <div>
+                        <p>
+                            From Rock to Modern Bollywood to Permanent Wave our class playlist is quite eclectic. Here
+                            is a
+                            look at the songs submitted for our collaborative COMP1054 Summer 2023 Playlist.
+                        </p>
+                        <p> This is just filler text courtesy of : <a
+                                href="http://www.catipsum.com/index.php#.Y89dlezMKzs"> Cat Ipsum </a> Cat ipsum dolor
+                            sit
+                            amet, sit by the fire. Attack curtains i is not fat, i is fluffy while happily ignoring when
+                            being called jump around on couch, meow constantly until given food, . Curl up and sleep on
+                            the freshly laundered towels spread kitty litter all over house give me some of your food
+                            give me some of your food give me some of your food meh, i don't want it, and push your
+                            water glass on the floor but ignore the human until she needs to get up, then climb on her
+                            lap and sprawl if human is on laptop sit on the keyboard.</p>
+                        <a href="https://open.spotify.com/playlist/22ddVPpLMaSBVlTpYmXag0?si=070c8aa053d74bcd"> Check
+                            Out The
+                            List on Spotify </a>
+                    </div>
+                </div>
+            </section>
+            <section id="playlist" class="flex">
+                <h2> The Playlist </h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th> Song </th>
+                            <th> Artist </th>
+                            <th> Album </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tune Jo Na Kaha</td>
+                            <td>Pritam, Mohit Chauhan</td>
+                            <td> New York</td>
+                        </tr>
+                        <tr>
+                            <td>Aise Kyun</td>
+                            <td>Rekha Bhardwaj</td>
+                            <td> Mismatched</td>
+                        </tr>
+                        <tr>
+                            <td>Wavin' Flag </td>
+                            <td>K'Naan</td>
+                            <td> Troubadour</td>
+                        </tr>
+                        <tr>
+                            <td> On My Way</td>
+                            <td>Alan Walker</td>
+                            <td>On My Way </td>
+                        </tr>
+                        <tr>
+                            <td> Today </td>
+                            <td>The Smashing Pumpkins</td>
+                            <td> Rotten Apples - Smashing Pumpkins Greatest Hits </td>
+                        </tr>
+                        <tr>
+                            <td> A Whole New World </td>
+                            <td>Mena Massoud</td>
+                            <td> Aladdin </td>
+                        </tr>
+                        <tr>
+                            <td> I Can't Winter</td>
+                            <td>The Strokes</td>
+                            <td> Room on Fire</td>
+                        </tr>
+                        <tr>
+                            <td> Firework</td>
+                            <td>Katy Perry</td>
+                            <td> Teenage Dream </td>
+                        </tr>
+                        <tr>
+                            <td> First Time</td>
+                            <td>ILLENIUM</td>
+                            <td> First Time </td>
+                        </tr>
+                        <tr>
+                            <td> Ilahi</td>
+                            <td>Pritham</td>
+                            <td> Yeh Jawaani Hai Deewani</td>
+                        </tr>
+                        <tr>
+                            <td> Kun Faya Kun</td>
+                            <td>A.R. Rahman</td>
+                            <td> Rockstart</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="features" class="flex">
+                <div>
+                    <h3> Top Genres</h3>
+                    <ul>
+                        <li> Filmi </li>
+                        <li> Modern Bollyword </li>
+                        <li> Alternative Rock </li>
+                        <li> Permanent Wave </li>
+                        <li> Rock </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3> Top Artists </h3>
+                    <ol>
+                        <li> Pritam</li>
+                        <li> Rekha Bhardwaj</li>
+                        <li> K'Naan </li>
+                    </ol>
+                </div>
+                <div>
+                </section>
+                <section id="Stats" class="flex">
+                    <h3> Characteristics</h3>
+                    <table id="table-2">
+                        <tbody>
+                            <tr>
+                                <th> Danceability </th>
+                                <td> 51 </td>
+                            </tr>
+                            <tr>
+                                <th> Energy </th>
+                                <td> 68</td>
+                            </tr>
+                            <tr>
+                                <th> Instrumentalness </th>
+                                <td> 12</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p> COMP1054 - Interface Design Using CSS - Summer2023 - Lab 1</p>
+        </footer>
+    </div><!--end wrapper-->
+</body>
+</html>
