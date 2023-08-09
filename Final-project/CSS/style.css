@@ -25,6 +25,7 @@
 }
 
 /*google font*/
+/*pseudo class selector (1)*/
 :is(h1, h2, h3, h4, h5, h6) {
     font-family: 'Roboto', sans-serif;
 }
@@ -33,6 +34,7 @@ html::-webkit-scrollbar {
     display: none;
 }
 
+/*element selector (2)*/
 html,
 body {
     font-size: 18px;
@@ -79,6 +81,7 @@ header div:nth-of-type(1) {
 }
 
 /*Menu will toggle on click (see JS for more)*/
+/*class selector (3)*/
 .menu-items {
     border-top: solid 1px #fff;
     display: none;
@@ -276,6 +279,7 @@ It will become a grid at larger viewports but it starts as a flex display*/
     flex-direction: column;
 }
 
+/*ID selector (4)*/
 #skill-grid h2 {
     color: white;
 }
@@ -546,7 +550,6 @@ to know how the page will respond on different devices explicitly*/
         background-repeat: no-repeat;
         background-position: center center;
         margin: -1em;
-
     }
 
     .proj-img {
@@ -579,5 +582,4 @@ to know how the page will respond on different devices explicitly*/
         padding: 2em;
         flex-direction: column;
     }
-
 }
