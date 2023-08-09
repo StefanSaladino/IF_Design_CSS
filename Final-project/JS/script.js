@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     dots[currentSlide].classList.add("highlight");
   }
 
+  //toggling the burger menu open and close based on a click event
   hamburgerIcon.addEventListener("click", function () {
     this.classList.toggle("open");
     menuItems.classList.toggle("show");
@@ -56,6 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
     showSlide(currentSlide + 1);
   }
 
+  //creating a function which returns a boolean value as to whether or not the current viewport is
+  //at least a certain width
   function isViewportAbove(minWidth) {
     return window.innerWidth >= minWidth;
   }
