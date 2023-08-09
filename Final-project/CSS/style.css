@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     scrollbar-width: none;
+    /*getting rid of scrollbars*/
     /* Firefox */
     -ms-overflow-style: none;
     /* Internet Explorer and Microsoft Edge */
@@ -23,18 +24,23 @@
     font-style: normal;
 }
 
-:is(h1, h2, h3, h4, h5, h6){
-    font-family:'Roboto', sans-serif;
+/*google font*/
+:is(h1, h2, h3, h4, h5, h6) {
+    font-family: 'Roboto', sans-serif;
+}
+
+html::-webkit-scrollbar {
+    display: none;
 }
 
 html,
 body {
-    font-family: "Open Sans";
     font-size: 18px;
     line-height: 28px;
     scroll-behavior: smooth;
 }
 
+/*styling for a sticky header*/
 header {
     position: sticky;
     top: 0;
@@ -54,6 +60,8 @@ header h2 {
     padding: 0.5em 1em;
 }
 
+/*menu goes inside the burger menu*/
+/*all menu/li items are styled to become part of the burger*/
 menu {
     display: flex;
     flex-direction: row;
@@ -70,6 +78,7 @@ header div:nth-of-type(1) {
     width: 100%;
 }
 
+/*Menu will toggle on click (see JS for more)*/
 .menu-items {
     border-top: solid 1px #fff;
     display: none;
@@ -84,6 +93,7 @@ header div:nth-of-type(1) {
     animation: 0.3s ease forwards;
 }
 
+/*animation for menu to slide in*/
 @keyframes slideInMenu {
     0% {
         transform: translateX(100%);
@@ -143,10 +153,14 @@ nav menu li a {
     transition: padding-left 0.3s ease;
 }
 
+/*by extending the padding, the bottom border also expands due to the box-sizing 
+On hover, the border expands creating a highlight effect for the user's target*/
 nav menu li a:hover {
     padding-left: 7.5em;
 }
 
+/*This is the info under the heading. I named it a parallax container
+because on larger devices, it'll create a parallax scroll effect*/
 .ParallaxContainer {
     background-color: rgba(0, 0, 0, 0.25);
     padding-bottom: 1em;
@@ -175,7 +189,6 @@ nav menu li a:hover {
     justify-content: center;
     opacity: 1;
     animation: slideInMenu 0.3s ease forwards;
-
 }
 
 @keyframes slideOutMenu {
@@ -188,6 +201,11 @@ nav menu li a:hover {
     }
 }
 
+/*slides class are styled as a grid
+project name goes in the top left, img in the top right, p goes on the bottom,
+spanning both columns*/
+/*this class is called slides because there will be a powerpoint like display
+for mid/large size devices*/
 .slides {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
@@ -200,6 +218,7 @@ nav menu li a:hover {
     min-width: 100%;
 }
 
+/*using a wrapper class to create a card like effect*/
 .wrapper {
     padding: 3em 2em;
 }
@@ -243,14 +262,13 @@ nav menu li a:hover {
     /* Internet Explorer and Microsoft Edge */
 }
 
+/*eliminate scrollbars*/
 .slides p::-webkit-scrollbar {
     display: none;
 }
 
-html::-webkit-scrollbar {
-    display: none;
-}
-
+/*these are for various skills
+It will become a grid at larger viewports but it starts as a flex display*/
 #skill-grid {
     background-color: rgba(0, 0, 0, 0.75);
     display: flex;
@@ -263,22 +281,18 @@ html::-webkit-scrollbar {
 }
 
 .proj-img {
-    aspect-ratio: 1;
+    aspect-ratio: 1/1;
     width: 90%;
     padding: 0.5em;
 }
 
-.wrapper:nth-child(even) {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
+/*a container class for the grid*/
 .grid-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-evenly;
-
 }
 
 .skill {
@@ -292,16 +306,14 @@ html::-webkit-scrollbar {
     flex-direction: column;
     border-radius: 5px;
     flex-wrap: wrap;
-    gap: calc(5vw+2em);
     flex-basis: calc(40vw - 20px);
-    aspect-ratio: 1;
+    aspect-ratio: 1/1;
 }
 
 .skill-img {
     border-radius: 10px;
     height: 90%;
-    aspect-ratio: 1;
-    flex-basis: 1;
+    aspect-ratio: 1/1;
     width: 5em;
 }
 
@@ -314,6 +326,7 @@ html::-webkit-scrollbar {
     filter: brightness(1.5);
 }
 
+/*styling for the form at the bottom of the page*/
 #contact-info {
     background-color: rgba(0, 0, 0, 0.25);
     padding: 1em;
@@ -337,6 +350,7 @@ input {
     margin: 0.5em 0;
     padding: 0.25em;
     width: 75vw;
+    max-width: 700px;
     height: 5vh;
 }
 
@@ -344,6 +358,7 @@ textarea {
     margin: 0.5em 0;
     padding: 0.25em;
     width: 75vw;
+    max-width: 700px;
     height: 25vh;
     resize: none;
 }
@@ -361,30 +376,48 @@ button {
     border: none;
 }
 
-
-
+/*I prefer to use px for media queries. While this may not be best practice, I like 
+to know how the page will respond on different devices explicitly*/
 @media screen and (min-width:600px) {
     #slider-images {
-        background-color: rgb(169, 169, 169);
+        background-color: #fff;
+    }
+
+    #slider-images .wrapper {
+        background-color: #fff;
+        z-index: -1;
     }
 
     .slides {
         height: auto;
         max-height: 60vh;
         padding: 0;
+        background-color: rgba(0, 0, 0, 0.5);
     }
 
     .proj-img {
         height: 75%;
-        aspect-ratio: 1;
+        aspect-ratio: 1/1;
         padding: 0.5em 1em 0 0;
         margin: 0;
     }
 
+    /*the slides are now becoming a slideshow. They can be controlled by the 
+    "dots" or it will continuously loop based on timing. See JS for more*/
     #slide-2,
     #slide-3,
     #slide-4 {
         display: none;
+    }
+
+    /*small adjustment for the sizes of grid rows*/
+    .slides {
+        display: grid;
+        grid-template-rows: 35vh 65vh;
+        grid-template-columns: 2fr 1fr;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 0.2em;
     }
 
     .slides h2 {
@@ -403,6 +436,8 @@ button {
         overflow: scroll;
     }
 
+    /*These dots correspond to a slide. Clicking will take you to a specific slide.
+    See JS for more*/
     .dot-container {
         display: flex;
         justify-content: center;
@@ -414,14 +449,14 @@ button {
     .dot {
         width: 0.5em;
         height: 0.5em;
-        background-color: #fff;
+        background-color: rgba(0, 0, 0, 0.5);
         margin: 0 0.25em;
         border-radius: 50%;
     }
 
     .dot:hover {
         cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.75);
     }
 
     .dot.highlight {
@@ -436,6 +471,7 @@ button {
         flex-direction: column;
     }
 
+    /*skills are now becoming a grid*/
     .grid-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -484,6 +520,8 @@ button {
 }
 
 @media screen and (min-width:1080px) {
+
+    /*creating parallax scroll*/
     main {
         perspective: 1px;
         transform-style: preserve-3d;
@@ -493,7 +531,7 @@ button {
         color: #ffffff;
     }
 
-
+    /*continuing parallax scroll effect*/
     .ParallaxContainer {
         display: flex;
         flex-direction: column;
@@ -513,7 +551,7 @@ button {
 
     .proj-img {
         height: 75%;
-        aspect-ratio: 1;
+        aspect-ratio: 1/1;
         padding: 0.5em 1em 0 0;
         margin: 0;
     }
@@ -522,8 +560,7 @@ button {
         display: grid;
         grid-template-rows: 35vh 65vh;
         grid-template-columns: 2fr 1fr;
-        border: 1px solid white;
-        background-color: rgba(255, 255, 255, 0.75);
+        border: 1px solid black;
         border-radius: 5px;
         padding: 0.2em;
     }
@@ -533,7 +570,6 @@ button {
     }
 
     .slides img:hover {
-        /*max-width: 40vw;*/
         height: 85%;
     }
 
@@ -543,6 +579,5 @@ button {
         padding: 2em;
         flex-direction: column;
     }
-
 
 }
