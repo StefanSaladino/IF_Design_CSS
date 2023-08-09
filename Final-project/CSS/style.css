@@ -1,0 +1,526 @@
+/*general reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer and Microsoft Edge */
+}
+
+html,
+body {
+    font-family: "Open Sans";
+    font-size: 18px;
+    line-height: 28px;
+    scroll-behavior: smooth;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color:rgb(49, 49, 49);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    z-index: 999;
+    height: auto;
+}
+
+header h2 {
+    font-size: 1.5em;
+    padding: 0.5em 1em;
+}
+
+menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+nav menu li {
+    display: inline-block;
+    margin: 0.5em 1.5em;
+}
+
+header div:nth-of-type(1) {
+    width: 100%;
+}
+
+.menu-items {
+    border-top:solid 1px #fff;
+    display: none;
+    text-decoration: none;
+    height: auto;
+    background-color: rgb(49, 49, 49);
+    padding: 1vh 1vw;
+    transition: opacity 0.5s ease;
+    z-index: 999;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: 0.3s ease forwards;
+}
+
+@keyframes slideInMenu {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutMenu {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/*hamburger menu will display*/
+.hamburger-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12px 15px 0 0;
+    cursor: pointer;
+}
+
+.hamburger-icon span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 6px 0;
+    padding: 2px 0;
+    border-radius: 2px;
+}
+
+nav menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+nav menu li {
+    margin: 0.5em 0em;
+    padding: 1em;
+}
+
+nav menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: solid 1px white;
+    padding: 1em;
+    transition: padding-left 0.3s ease;
+}
+
+nav menu li a:hover {
+    padding-left: 7.5em;
+}
+
+.ParallaxContainer{
+    background-color: rgba(0, 0, 0, 0.25);
+    padding-bottom: 1em;
+}
+
+.ParallaxContainer h1{
+    padding: 1em;
+    text-align: center; 
+}
+
+.ParallaxContainer h2{
+    padding-bottom: 1em;
+    text-align: center; 
+}
+
+.ParallaxContainer p{
+    padding: 0 3em;
+    text-align: center; 
+}
+
+/*using JS to add a "show" class to menu items when the burger icon is clicked*/
+.menu-items.show {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    opacity: 1;
+    animation: slideInMenu 0.3s ease forwards;
+
+}
+
+@keyframes slideOutMenu {
+    100% {
+        transform: translateX(0);
+    }
+
+    0% {
+        transform: translateX(100%);
+    }
+}
+
+.slides {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 2fr 1fr;
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 5px;
+    padding: 0.2em;
+    max-height: 50vh;
+    min-width: 100%;
+}
+
+.wrapper {
+    padding: 3em 2em;
+}
+
+.wrapper:nth-child(even){
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.wrapper:nth-child(odd){
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.slides h2{
+    grid-row: 1;
+    grid-column: 1;
+    font-size: 1.25em;
+}
+
+.slides img{
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.slides img:hover{
+    filter: brightness(1.2);
+    width: 95%;
+    max-width: 30vw;
+    transition: 0.3s ease-in;
+}
+
+.slides p{
+    grid-row: 2;
+    grid-column: 1/3;
+    font-size: 0.75em;
+    padding: 0.5em 0.75em;
+    max-height: 75%;
+    overflow: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer and Microsoft Edge */
+}
+
+.slides p::-webkit-scrollbar {
+    display: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+#skill-grid {
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    padding: 2em;
+    flex-direction: column;
+}
+
+#skill-grid h2{
+    color: white;
+}
+
+.proj-img {
+    aspect-ratio: 1;
+    width: 90%;
+    padding: 0.5em;
+}
+
+.wrapper:nth-child(even){
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.grid-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+
+}
+
+.skill {
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 1em;
+    margin: 1em 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    gap: calc(5vw+2em);
+    flex-basis: calc(40vw - 20px);
+    aspect-ratio: 1;
+}
+
+.skill-img {
+    border-radius: 10px;
+    height: 90%;
+    aspect-ratio: 1;
+    flex-basis: 1;
+    width: 5em;
+}
+
+.skill-img:hover {
+    filter: brightness(1.5);
+    transition: 0.3s ease-in;
+}
+
+.skill-img a:visited img {
+    filter: brightness(1.5);
+}
+
+#contact-info { 
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 1em;
+}
+
+form { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} 
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    margin: 0.5em 0;
+    padding: 0.25em;
+    width: 75vw;
+    height: 5vh;
+}
+
+textarea{
+    margin: 0.5em 0;
+    padding: 0.25em;
+    width: 75vw;
+    height: 25vh;
+    resize:none;
+}
+
+#contact-info h3{
+    text-align: center;
+}
+
+button {
+    margin: 1em;
+    padding: 0.5em;
+    background-color: #f86767;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+}
+
+
+
+@media screen and (min-width:600px) {
+    #slider-images {
+        background-color: rgb(169, 169, 169);
+    }    
+
+    .slides {
+        height: auto;
+        max-height: 60vh;
+        padding: 0;
+    }
+
+    .proj-img {
+        height: 75%;
+        aspect-ratio: 1;
+        padding: 0.5em 1em 0 0;
+        margin: 0;
+    }
+
+    #slide-2,
+    #slide-3,
+    #slide-4 {
+        display: none;
+    }
+
+    .slides h2 {
+        font-size: 2em;
+        color: #000;
+        padding: 0.5em 1em 0 1em;
+        line-height: 1em;
+    }
+
+    .slides p{
+        grid-row: 2;
+        grid-column: 1/3;
+        font-size: 1em;
+        padding: 0 0.5em;
+        max-height: 75%;
+        overflow: scroll;
+    }
+
+    .dot-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        padding-bottom: 0.75em;
+    }
+
+    .dot {
+        width: 0.5em;
+        height: 0.5em;
+        background-color: #fff;
+        margin: 0 0.25em;
+        border-radius: 50%;
+    }
+
+    .dot:hover {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .dot.highlight {
+        background-color: #000;
+    }
+
+    #skill-grid {
+        display: flex;
+        padding: 2em;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 5em;
+    }
+
+    .skill {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+
+    /* Allotting grid slots to each .skill container */
+    #py {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #Html {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    #Js {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    #Css {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    #Cs {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    #Java {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+}
+
+@media screen and (min-width:1080px) {
+    main {
+        perspective: 1px;
+        transform-style: preserve-3d;
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        color: #ffffff;
+    }
+    
+
+    .ParallaxContainer {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: -1;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        transform: translateZ(-1px) scale(2);
+        background-image: url("../img/toronto-skyline.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin: -1em;
+        
+    }
+
+    .proj-img {
+        height: 75%;
+        aspect-ratio: 1;
+        padding: 0.5em 1em 0 0;
+        margin: 0;
+    }
+
+    .slides {
+        display: grid;
+        grid-template-rows: 35vh 65vh;
+        grid-template-columns: 2fr 1fr;
+        border: 1px solid white;
+        background-color: rgba(255, 255, 255, 0.75);
+        border-radius: 5px;
+        padding: 0.2em;
+    }
+
+    .slides p {
+        color:#000;
+    }
+
+    .slides img:hover{
+        /*max-width: 40vw;*/
+        height: 85%;
+    }
+
+    #skill-grid {
+        background-color: rgb(53, 52, 52);
+        display: flex;
+        padding: 2em;
+        flex-direction: column;
+    }
+
+
+}
